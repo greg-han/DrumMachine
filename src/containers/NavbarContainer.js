@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import { toggleOn } from '../actions/actions'; 
 import { toggleOff } from '../actions/actions';
 import { bindActionCreators } from 'redux';
-var {Navbar} = require('../components/Navbar');
+import Navbar from '../components/Navbar'
 
-console.log(Navbar)
 const mapDispatchToProps = (dispatch) => {
   return {
    ...bindActionCreators({ toggleOn, toggleOff }, dispatch)

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'react';
 import Pad from './Pad';
-import DrumMachineContainer from '../containers/DrumMachineContainer'
-var {Navbar} = require('./Navbar');
+import Navbar from './Navbar';
 
-const pads = [{
+let pads = [{
   keyCode: 81,
   keyTrigger: 'Q',
   id: 'Chord-1',
@@ -63,42 +63,42 @@ const drummachinestyle = {
  transform: 'translate(-50%,-50%)'
 }
 
-class DrumMachine extends Component {
-  constructor(props){ 
-    super(props);
-    let pads;
-  }
-  pads = (this.props.toggle) ?
-    this.props.pads.map((drum,i,padsarr) => {
+class DrumMachine extends Component { 
+    constructor(props){
+      super(props);
+    }
+    render(){
+      let drumpads;
+      (this.props.toggle) ?
+        drumpads = pads.map((drum,i,padsarr) => {
+          return(
+            <Pad 
+              clipId={padsarr[i].id}
+              clip={padsarr[i].keyTrigger}
+              keyTrigger={padsarr[i].keyTrigger}
+              keyCode={padsarr[i].keyCode}
+              power={this.props.power}
+            />
+         )
+        }) :
+         drumpads = pads.map((drum,i,padsarr) => {
+         return(
+          <Pad
+            clipId={padsarr[i].id}
+            clip='#'
+            keyTrigger={padsarr[i].keyTrigger}
+            keyCode={padsarr[i].keyCode}
+            power={this.props.power}
+          />
+        )
+     })
       return(
-        <Pad 
-          clipId={padsarr[i].id}
-          clip={padsarr[i].keyTrigger}
-          keyTrigger={padsarr[i].keyTrigger}
-          keyCode={padsarr[i].keyCode}
-          power={this.props.power}
-        >{padsarr[i].id}</Pad>
-      )
-   }) :  
-   this.props.pads.map((drum,i,padsarr) => {
-    return(
-      <Pad 
-        clipId={padsarr[i].id}
-        clip='#'
-        keyTrigger={padsarr[i].keyTrigger}
-        keyCode={padsarr[i].keyCode}
-        power={this.props.power}
-      >{padsarr[i].id}</Pad>
-    )
-   });
-  render(){
-    return(
-      <div id="drum-machine" style={drummachinestyle}>
-        <Navbar />
-          {pads}
-      </div>
-    ); 
-  }
+        <div id="drum-machine" style={drummachinestyle}>
+          <Navbar />
+         {drumpads}
+        </div>
+      ) 
+    }
 }
 
-export default DrumMachine;
+export default DrumMachine 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Pad from './Pad';
-import NavbarContainer from '../containers/NavbarContainer'
 
 const navbar = {
   width:  '440px',
@@ -28,4 +27,4 @@ class Navbar extends Component {
  }
 }
 
-module.exports = Navbar;
+export default Navbar
