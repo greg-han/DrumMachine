@@ -1,3 +1,8 @@
+## Drum Machine
+# This is built using react + redux. At the moment,  state management is extremely simple for the sake of learning redux and to get it running first.
+# once the appis fully functional, pads will be integrated into the state 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
