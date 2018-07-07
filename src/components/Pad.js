@@ -19,13 +19,15 @@ class Pad extends Component {
   this.soundOff = this.soundOff.bind(this);
   }
   soundOff(event){
+   console.log("I'm clicked");
    const sound = document.getElementById(this.props.keyTrigger);
-   sound.currentTime = 0;
    sound.play();
   } 
   render() { 
     return ( 
-      <div class="drum-pad" style={padStyle}>
+      <div id={this.props.clipId} className="drum-pad" style={padStyle} onClick={this.soundOff}>
+        <audio className='clip' id={this.props.keyTrigger} src={this.props.clip}></audio>
+      {this.props.keyTrigger}
       </div>    
    )
   }

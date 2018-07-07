@@ -70,24 +70,24 @@ class DrumMachine extends Component {
     render(){
       let drumpads;
       (this.props.toggle) ?
-        drumpads = pads.map((drum,i,padsarr) => {
+        drumpads = pads.map((drum,i,drumpads) => {
           return(
             <Pad 
-              clipId={padsarr[i].id}
-              clip={padsarr[i].keyTrigger}
-              keyTrigger={padsarr[i].keyTrigger}
-              keyCode={padsarr[i].keyCode}
+              clipId={drumpads[i].id}
+              clip={drumpads[i].url}
+              keyTrigger={drumpads[i].keyTrigger}
+              keyCode={drumpads[i].keyCode}
               power={this.props.power}
             />
          )
         }) :
-         drumpads = pads.map((drum,i,padsarr) => {
+         drumpads = pads.map((drum,i,drumpads) => {
          return(
           <Pad
-            clipId={padsarr[i].id}
+            clipId={drumpads[i].id}
             clip='#'
-            keyTrigger={padsarr[i].keyTrigger}
-            keyCode={padsarr[i].keyCode}
+            keyTrigger={drumpads[i].keyTrigger}
+            keyCode={drumpads[i].keyCode}
             power={this.props.power}
           />
         )
