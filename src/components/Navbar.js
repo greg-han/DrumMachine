@@ -89,12 +89,12 @@ class Navbar extends Component {
         id="normal-switch"
         uncheckedIcon={
          <svg viewBox="0 0 10 10" height="100%" width="100%" fill="#1b2663">
-         <rect x={0} y={0} rx={2} ry={2} width={10} height={10} />
+         <rect x={1.5} y={1.5} rx={2} ry={2} width={7} height={7} />
          </svg>
         }
         checkedIcon={
          <svg viewBox="0 0 10 10" height="100%" width="100%" fill="#41f4d9">
-         <rect x={0} y={0} rx={2} ry={2} width={10} height={10} />
+         <rect x={1.5} y={1.5} rx={2} ry={2} width={7} height={7} />
          </svg>
         } />
       </span>
