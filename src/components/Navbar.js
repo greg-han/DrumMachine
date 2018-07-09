@@ -19,7 +19,7 @@ const navText = {
 const toggleStyle= {
   marginLeft: '55%',
   position: 'absolute',
-  paddingTop: '5px',
+  paddingTop: '6px',
 }
 
 
