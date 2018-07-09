@@ -8,4 +8,3 @@ A project used to learn react + redux. All state is stored in the redux store.
 * Display: small display which displays the name of a played sound. Names and sounds are from a free code camp AWS link. 
 
 Working Example on Heroku: https://midiboard.herokuapp.com  
-once the app is fully functional, pads will be integrated into the state 
