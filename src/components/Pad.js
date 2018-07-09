@@ -24,6 +24,7 @@ class Pad extends Component {
     super(props);
   this.soundOff = this.soundOff.bind(this);
   this.keySound = this.keySound.bind(this);
+  this.changeDisplay = this.changeDisplay.bind(this);
   }
   componentDidMount() {
    document.addEventListener("keydown",this.keySound);
@@ -32,21 +33,27 @@ class Pad extends Component {
    document.removeEventListener("keydown",this.keySound);
   }
   keySound(event){
-   console.log(event.key);
    const sound = document.getElementById(String(event.key).toUpperCase());
+   console.log("sound",sound);
    if(sound){
+     this.changeDisplay(sound.getAttribute("soundName").replace(/-/g,' '));
      sound.play();
     }  
   }
   soundOff(event){
-   console.log("I'm clicked",event);
    const sound = document.getElementById(this.props.keyTrigger);
    sound.play();
   } 
+  changeDisplay(name){
+    this.props.displayOn(name.replace(/-/g,' '))
+  }
   render() { 
+    if(!this.props.power){
+    this.props.displayOff() 
+    }
     return ( 
-      <div id={this.props.clipId} className="drum-pad" style={padStyle} onClick={this.soundOff} onKeyDown={this.keySound} >
-        <audio className='clip' id={this.props.keyTrigger} src={this.props.clip}></audio>
+      <div id={this.props.clipId} className="drum-pad" style={padStyle} onClick={() => {this.soundOff(); this.changeDisplay(this.props.clipId)}} onKeyDown={this.keySound} >
+        <audio className='clip' id={this.props.keyTrigger} src={this.props.clip} soundName={this.props.clipId}  ></audio>
       <div style={padText}>
       {this.props.keyTrigger}
       </div>
