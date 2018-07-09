@@ -1,5 +1,7 @@
 # Drum Machine
 A project used to learn react + redux. All state is stored in the redux store.
+This time, I made a wireframe of the design, then built the functionality of the app in.
+Will style soon (Probably while learning SaSS).
 
 ## Features
 * Play Sounds: Click on drumpads or press the respective labelled key to play a midi sound.
