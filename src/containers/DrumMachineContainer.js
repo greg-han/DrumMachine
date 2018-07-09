@@ -1,16 +1,21 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import  DrumMachine from '../components/DrumMachine';
-import toggle from  '../reducers/reducers';
-
+import { toggleOff } from '../actions/actions'
+import { toggleOn } from '../actions/actions'
+import { bindActionCreators } from 'redux';
 
 const mapStateToProps = (state) => {
  return {
-   toggle : state 
+   power : state 
   } 
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+      ...bindActionCreators({ toggleOn, toggleOff }, dispatch)
+  }
+}
 
-const DrumMachineContainer = connect(mapStateToProps,null)(DrumMachine)
+const DrumMachineContainer = connect(mapStateToProps,mapDispatchToProps)(DrumMachine)
 
 export default DrumMachineContainer;

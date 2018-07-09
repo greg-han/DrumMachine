@@ -1,6 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
 const TOGGLE_ON = 'TOGGLE_ON' 
 const TOGGLE_OFF = 'TOGGLE_OFF'	
 

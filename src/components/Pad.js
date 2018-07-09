@@ -11,7 +11,12 @@ const padStyle = {
   marginTop: '3px',
   marginBottom: '3px',
   borderRadius: '5px',
-  textAlign: 'center'
+}
+
+const padText = {
+  position: 'relative',
+  marginLeft: '5px',
+  marginTop: '5px',
 }
 
 class Pad extends Component {
@@ -42,7 +47,9 @@ class Pad extends Component {
     return ( 
       <div id={this.props.clipId} className="drum-pad" style={padStyle} onClick={this.soundOff} onKeyDown={this.keySound} >
         <audio className='clip' id={this.props.keyTrigger} src={this.props.clip}></audio>
+      <div style={padText}>
       {this.props.keyTrigger}
+      </div>
       </div>    
    )
   }

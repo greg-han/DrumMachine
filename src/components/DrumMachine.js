@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { PropTypes } from 'react';
 import Pad from './Pad';
 import Navbar from './Navbar';
 
@@ -55,8 +54,6 @@ const drummachinestyle = {
  margin: '30px auto 0',
  width: '444px',
  height: '487px',
- borderRadius: '20px',
- border: '2px solid black',
  position: 'absolute',
  top: '50%',
  left:'50%',
@@ -69,7 +66,8 @@ class DrumMachine extends Component {
     }
     render(){
       let drumpads;
-      (this.props.toggle) ?
+      console.log("props",this.props);
+      (this.props.power) ?
         drumpads = pads.map((drum,i,drumpads) => {
           return(
             <Pad 
@@ -94,7 +92,7 @@ class DrumMachine extends Component {
      })
       return(
         <div id="drum-machine" style={drummachinestyle}>
-          <Navbar />
+          <Navbar power={this.props.power} toggleOff={this.props.toggleOff} toggleOn={this.props.toggleOn} />
          {drumpads}
         </div>
       ) 

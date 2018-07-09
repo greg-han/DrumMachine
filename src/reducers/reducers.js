@@ -1,7 +1,4 @@
-
-const defaultState = true;
-
-const toggle = (state = defaultState, action) => {
+const toggle = (state = true, action) => {
   switch(action.type){
     case 'TOGGLE_ON':
       return true 

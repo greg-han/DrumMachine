@@ -12,9 +12,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <DrumMachineContainer>
-          <NavbarContainer />
-        </DrumMachineContainer>
+       <DrumMachineContainer>
+        <NavbarContainer/>
+       </DrumMachineContainer>
       </Provider>
     );
   }
